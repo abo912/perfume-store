@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة الأدمن</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        let password = prompt("ادخل كلمة المرور للدخول إلى الأدمن:");
+        if(password !== "1234"){
+            alert("كلمة المرور خاطئة!");
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <header>
+        <h1>لوحة التحكم - الأدمن</h1>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+        </nav>
+    </header>
+
+    <section class="admin-section">
+        <h2>إضافة منتج جديد</h2>
+        <form id="addProductForm">
+            <input type="text" id="productName" placeholder="اسم المنتج" required>
+            <input type="text" id="productDesc" placeholder="وصف المنتج" required>
+            <input type="text" id="productPrice" placeholder="سعر المنتج" required>
+         <input type="number" id="productQty" placeholder="الكمية المتوفرة" required>
+            <label>اختر صورة المنتج:</label>
+            <input type="file" id="productImage" accept="image/*" required>
+            <img id="preview" src="" alt="معاينة الصورة" style="width:150px; margin-top:10px;">
+            <button type="submit">إضافة / تعديل المنتج</button>
+        </form>
+
+        <h2>المنتجات الحالية</h2>
+        <div id="adminProducts"></div>
+    </section>
+
+ <script src="firebase.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
